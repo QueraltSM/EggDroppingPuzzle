@@ -10,10 +10,10 @@ def memoize(f):
     return newfunc
 
 @memoize
-def worst_case_trial_count(floors, eggs):
+def eggDrop(eggs,floors):
     if eggs == 1 or floors < 2:
         return floors
-    return min(1 + max(worst_case_trial_count(i - 1, eggs - 1), worst_case_trial_count(floors - i, eggs)) for i in xrange(1, floors))
+    return min(1 + max(eggDrop(eggs - 1, x - 1), eggDrop(eggs, floors - x)) for x in xrange(1, floors))
 
-if __name__ == '__main__':
-    print worst_case_trial_count(10,2)
+def init(eggs,floors):
+    print "- - - Memoization - - -> ", eggDrop(eggs, floors)

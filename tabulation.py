@@ -18,4 +18,4 @@ def eggDrop(eggs, floors):
     return eggFloor[eggs][floors]
 
 def init(eggs,floors):
-    print "- - - Tabulation - - -> ", eggDrop(eggs, floors)
+    print "Tabulation = ", eggDrop(eggs, floors)
